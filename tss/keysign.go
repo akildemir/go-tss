@@ -10,7 +10,7 @@ import (
 	"time"
 
 	tsslibcommon "github.com/binance-chain/tss-lib/common"
-	"github.com/libp2p/go-libp2p-core/peer"
+	"github.com/libp2p/go-libp2p/core/peer"
 
 	"github.com/akildemir/go-tss/blame"
 	"github.com/akildemir/go-tss/common"

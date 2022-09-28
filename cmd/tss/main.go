@@ -12,7 +12,6 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client/input"
 	golog "github.com/ipfs/go-log"
-	"github.com/libp2p/go-libp2p-peerstore/addr"
 	"gitlab.com/thorchain/binance-sdk/common/types"
 
 	"github.com/akildemir/go-tss/common"
@@ -65,13 +64,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	var bootstrapPeers addr.AddrList
+	var bootstrapPeers p2p.AddrList
 	savedPeers, err := stateManager.RetrieveP2PAddresses()
 	if err != nil {
-		bootstrapPeers = addr.AddrList(p2pConf.BootstrapPeers)
+		bootstrapPeers = p2p.AddrList(p2pConf.BootstrapPeers)
 	} else {
 		bootstrapPeers = savedPeers
-		bootstrapPeers = append(bootstrapPeers, addr.AddrList(p2pConf.BootstrapPeers)...)
+		bootstrapPeers = append(bootstrapPeers, p2p.AddrList(p2pConf.BootstrapPeers)...)
 	}
 	comm, err := p2p.NewCommunication(p2pConf.RendezvousString, bootstrapPeers, p2pConf.Port, p2pConf.ExternalIP)
 	if err != nil {
