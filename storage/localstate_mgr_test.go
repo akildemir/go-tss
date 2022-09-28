@@ -13,7 +13,7 @@ import (
 	. "gopkg.in/check.v1"
 
 	"github.com/akildemir/go-tss/conversion"
-	"gitlab.com/akildemir/go-tss/p2p"
+	"github.com/akildemir/go-tss/p2p"
 )
 
 type FileStateMgrTestSuite struct{}
